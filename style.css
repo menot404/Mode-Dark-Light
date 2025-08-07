@@ -1,0 +1,111 @@
+:root {
+     /* Les variables pour le thème claire (par defaut )*/
+     --bg-color: #ffffff;
+     --text-color: #333333;
+     --primary-color: #2563eb;
+     --card-bg: #f9fafb;
+     --border-color: #e5e7eb;
+     --shadow-color: rgba(0,0,0,0.1);
+}
+
+[data-theme="dark"] {
+    /* Variables pour le thème sombre*/
+    --bg-color: #121212;
+    --text-color: #f3f4f6;
+    --primary-color: #60a5fa;
+     --card-bg: #1e293b;
+    --border-color: #374151;
+    --shadow-color: rgba(255, 255, 255, 0.1);
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: sans-serif;
+    padding: 1.2rem;
+    margin: 0;
+    min-height: 100vh;
+    transition: background-color .3s, color .3s;
+}
+
+.container {
+    width: 100%;
+    max-width: 55rem;
+    margin: 0 auto;
+}
+
+.theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 4rem;
+    height: 2.4rem;
+}
+
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider{
+    position: absolute;
+    cursor: pointer;
+    top: 0;bottom: 0;
+    left: 0;right: 0;
+    background-color: #ccc;
+    border-radius: 2.2rem;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "🌙";
+    height: 26px;
+    width: 26px;
+    left: 4px;bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+}
+
+input:checked + .slider {
+    background-color: var(--primary-color);
+}
+
+input:checked + .slider:before {
+    content: "☀️";
+    transform: translateX(26px);
+}
+
+
+.card {
+    background-color: var(--card-bg);
+    border: .1rem solid var(--border-color);
+    border-radius: .5rem;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 4px 6px var(--shadow-color);
+    transition: all 0.3s ease;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 10px 0;
+    font-size: 1rem;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
