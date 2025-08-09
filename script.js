@@ -21,7 +21,7 @@ if (currentTheme === 'dark') {
 }
 
 // Gérer le changement de thème
-const handlerMode = ()=>{
+const handlerMode = function(){
     if (this.checked) {
         htmlElement.setAttribute('data-theme', 'dark')
         localStorage.setItem('theme', 'dark');
